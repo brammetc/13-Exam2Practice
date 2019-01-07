@@ -6,8 +6,8 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Tanner Brammeier.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -40,8 +40,8 @@ def main():
     # UN-comment tests as you work the problems.
     ###########################################################################
 
-    # run_test_init()
-    # run_test_append_string()
+    run_test_init()
+    run_test_append_string()
     # run_test_double()
     # run_test_shrink()
     # run_test_double_then_shrink()
@@ -64,6 +64,16 @@ class Box(object):
     """
 
     def __init__(self, contents, volume):
+        self.contents = contents
+        self.volume = volume
+        if len(contents) < self.volume + 1:
+            print(self.contents)
+            print(self.volume)
+        else:
+            self.contents = ''
+            print(self.contents)
+            print(self.volume)
+
         """
         What comes in:
           -- self
@@ -95,7 +105,7 @@ class Box(object):
           :type volume: int
         """
         # ---------------------------------------------------------------------
-        # TODO: 2. Implement and test this function.
+        # DONE: 2. Implement and test this function.
         #     See the testing code (below) for more examples.
         # ---------------------------------------------------------------------
         # ---------------------------------------------------------------------
@@ -105,6 +115,13 @@ class Box(object):
         # ---------------------------------------------------------------------
 
     def append_string(self, additional_contents):
+        space = self.volume - len(self.contents)
+        print(space)
+        number_of_characters_to_append = space
+        for k in range(self.volume):
+            stuff_to_add = self.contents + additional_contents
+            self.contents = stuff_to_add
+
         """
         What comes in:
           -- self
